@@ -1,0 +1,123 @@
+/*
+Theme Name:     WIC2015
+Theme URI:      https://wakayama-it-carnival.jp/
+Description:    Theme for Event based on Twenty Thirteen
+Author:         Takayuki Miyauchi
+Author URI:     https://firegoby.jp/
+Template:       twentythirteen
+Version:        0.1.0
+*/
+
+body.custom-background
+{
+	background-size: cover !important;
+}
+
+.site
+{
+	background-color: transparent;
+}
+
+.btn
+{
+	color: #ffffff !important;
+}
+
+#main
+{
+	background-color: #ffffff;
+}
+
+#masthead
+{
+	background-size: cover;
+	background-position: bottom center;
+	height: 460px;
+	position: relative;
+	background-color: rgba( 0, 51, 102, 0.5);
+}
+
+#masthead .home-link
+{
+	color: #ffffff;
+	display: block;
+	text-shadow: 1px 1px 2px #555555;
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+	overflow: hidden;
+}
+
+#masthead .home-link h1,
+#masthead .home-link h2
+{
+	text-align: center;
+}
+
+#navbar
+{
+	position: absolute;
+	top: 0px;
+	margin: 0;
+}
+
+#secondary
+{
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+#colophon
+{
+	background-color: transparent;
+}
+
+#colophon .widget-area
+{
+    width: 100% !important;
+    max-width: 100% !important;
+	box-sizing: border-box;
+	padding: 0;
+}
+
+#colophon .widget
+{
+	padding: 0;
+	width: 100%;
+	position: static !important;
+	margin: 0;
+	float: none;
+	overflow: auto;
+	background-color: #2e3037;
+}
+
+#colophon .widget:nth-child(even)
+{
+	background-color: rgba( 0, 51, 102, 0.8);
+}
+
+#colophon .widget-container
+{
+	width: 750px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 2em 0;
+}
+
+#colophon .widget_sp_image
+{
+    text-align: center;
+}
+
+.site-info
+{
+	background-color: #333333;
+	max-width: 100%;
+}
