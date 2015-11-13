@@ -42,12 +42,12 @@ function twentythirteen_parent_theme_enqueue_styles() {
 		'1.0.0'
 	);
 
-	wp_enqueue_script( 'wic2015-script',
-		get_stylesheet_directory_uri() . '/js/wic2015.js',
-		array( 'jquery' ),
-		'1.0.0',
-		true
-	);
+	// wp_enqueue_script( 'wic2015-script',
+	// 	get_stylesheet_directory_uri() . '/js/wic2015.js',
+	// 	array( 'jquery' ),
+	// 	'1.0.0',
+	// 	true
+	// );
 }
 
 function wic2015_widgets_init() {
@@ -73,3 +73,35 @@ function wic2015_widgets_init() {
 }
 
 add_action( 'widgets_init', 'wic2015_widgets_init', 11 );
+
+function wic2015_custom_header_setup() {
+	$args = array(
+		// Text color and image (empty to use none).
+		'default-text-color'     => '#ffffff',
+
+		// Set height and width, with a maximum value for the width.
+		'height'                 => 460,
+		'width'                  => 1600,
+
+		// Callbacks for styling the header and the admin preview.
+		'wp-head-callback'       => 'twentythirteen_header_style',
+		'admin-head-callback'    => 'twentythirteen_admin_header_style',
+		'admin-preview-callback' => 'twentythirteen_admin_header_image',
+	);
+
+	add_theme_support( 'custom-header', $args );
+
+	/*
+	 * Default custom headers packaged with the theme.
+	 * %s is a placeholder for the theme template directory URI.
+	 */
+	register_default_headers( array(
+		// 'circle' => array(
+		// 	'url'           => '%s/images/headers/circle.png',
+		// 	'thumbnail_url' => '%s/images/headers/circle-thumbnail.png',
+		// 	'description'   => _x( 'Circle', 'header image description', 'twentythirteen' )
+		// ),
+	) );
+}
+
+add_action( 'after_setup_theme', 'wic2015_custom_header_setup', 11 );

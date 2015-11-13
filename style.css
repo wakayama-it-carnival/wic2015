@@ -16,6 +16,7 @@ body.custom-background
 .site
 {
 	background-color: transparent;
+	max-width: 100%;
 }
 
 .btn

@@ -16,6 +16,7 @@ gulp.task( 'twentythirteen_style', function () {
 		.pipe( replace( '#bc360a', '#337ab7' ) )
 		.pipe( replace( '604px', '750px' ) )
 		.pipe( replace( 'italic', 'normal' ) )
+		.pipe( replace( 'images/search-icon.png', '../../twentythirteen/images/search-icon.png' ) )
 		.pipe( rename( {
 			basename: 'twentythirteen',
 			extname: '.css'
