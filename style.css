@@ -30,14 +30,11 @@ body.custom-background
 
 #masthead
 {
-	background-color: #326696;
-	margin: 0px;
-	padding: 0px;
-	font-size:13px;
-	background-image: none;
-	position: relative;
-	width: 100%;
+	background-size: cover;
+	background-position: bottom center;
 	height: 460px;
+	position: relative;
+	background-color: rgba( 0, 51, 102, 0.5);
 }
 
 #masthead .home-link
@@ -123,16 +120,4 @@ body.custom-background
 {
 	background-color: #333333;
 	max-width: 100%;
-}
-
-.entry-content h2
-{
-	margin: 1.5em 0 1em 0;
-	padding-bottom: 5px;
-	border-bottom: 2px solid #f39c12;
-}
-
-.entry-content h2:first-child
-{
-	margin-top: 0;
 }
