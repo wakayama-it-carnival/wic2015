@@ -8,6 +8,23 @@ Template:       twentythirteen
 Version:        0.1.0
 */
 
+body
+{
+	height: 100%;
+}
+
+.custom-background-container
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-size: cover !important;
+	z-index: -1;
+}
+
 body.custom-background
 {
 	background-size: cover !important;
@@ -62,9 +79,11 @@ body.custom-background
 
 #navbar
 {
-	position: absolute;
+	position: fixed;
 	top: 0px;
 	margin: 0;
+	z-index: 9999;
+	border-bottom: 1px solid #dedede;
 }
 
 #secondary
@@ -128,4 +147,10 @@ body.custom-background
 	border-bottom: 3px solid #16a085;
 	padding-bottom: 5px;
 	margin: 1.5em 0 1em 0;
+}
+
+@media screen and ( max-width: 750px ) {
+	.custom-background-container {
+		background-attachment: scroll !important;
+	}
 }

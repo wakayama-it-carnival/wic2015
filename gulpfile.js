@@ -14,9 +14,11 @@ gulp.task( 'twentythirteen_style', function () {
 		.pipe( replace( '#f7f5e7', '#fafafa' ) )
 		.pipe( replace( '#e8e5ce', '#333' ) )
 		.pipe( replace( '#bc360a', '#337ab7' ) )
+		.pipe( replace( '#e6402a', '#7CCAFF' ) )
 		.pipe( replace( '604px', '750px' ) )
 		.pipe( replace( 'italic', 'normal' ) )
 		.pipe( replace( 'images/search-icon.png', '../../twentythirteen/images/search-icon.png' ) )
+		.pipe( replace( 'images/search-icon-2x.png', '../../twentythirteen/images/search-icon-2x.png' ) )
 		.pipe( replace( 'input', '__' ) )
 		.pipe( rename( {
 			basename: 'twentythirteen',
