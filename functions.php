@@ -104,11 +104,6 @@ function wic2015_theme_wp_head() {
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<script type="text/javascript">
 		var three_theme_root = "<?php echo esc_js( get_stylesheet_directory_uri() ); ?>";
-		<?php if ( is_home() ): ?>
-		var is_home = true;
-		<?php else: ?>
-		var is_home = false;
-		<?php endif; ?>
 	</script>
 <?php
 }
