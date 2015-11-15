@@ -45,6 +45,13 @@ gulp.task( 'css', [ 'twentythirteen_style', 'twitter_bootstrap' ], function () {
 		.pipe( gulp.dest( 'css' ) );
 } );
 
-gulp.task( 'default', [ 'css' ], function () {
+gulp.task( "genericons", function(){
+	return gulp.src( [
+			'node_modules/genericons/genericons/*',
+		] )
+		.pipe( gulp.dest( 'css' ) );
+} );
+
+gulp.task( 'default', [ 'css', 'genericons' ], function () {
 
 } );

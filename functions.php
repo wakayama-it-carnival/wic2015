@@ -3,6 +3,8 @@
 if ( ! isset( $content_width ) )
 	$content_width = 750;
 
+define( 'WIC2015_VERSION', '1.0.0' );
+
 add_action( 'after_setup_theme', 'three_theme_after_setup_theme_01' );
 function three_theme_after_setup_theme_01() {
 	add_theme_support( 'custom-background' );
@@ -24,28 +26,46 @@ function three_theme_after_setup_theme_02() {
 add_action( 'wp_enqueue_scripts', 'twentythirteen_parent_theme_enqueue_styles' );
 
 function twentythirteen_parent_theme_enqueue_styles() {
-	wp_enqueue_style( 'twentythirteen-style',
+	wp_enqueue_style(
+		'twentythirteen-style',
 		get_stylesheet_directory_uri() . '/css/twentythirteen.min.css',
 		array(),
-		'1.0.0'
+		WIC2015_VERSION
 	);
 
-	wp_enqueue_style( 'bootstrap-style',
+	wp_enqueue_style(
+		'bootstrap-style',
 		get_stylesheet_directory_uri() . '/css/bootstrap.min.css',
 		array( 'twentythirteen-style' ),
-		'1.0.0'
+		WIC2015_VERSION
 	);
 
-	wp_enqueue_style( 'wic2015-style',
+	wp_enqueue_style(
+		'bootstrap-style',
+		get_stylesheet_directory_uri() . '/css/bootstrap.min.css',
+		array(),
+		WIC2015_VERSION
+	);
+
+	wp_enqueue_style(
+		'genericons',
+		get_stylesheet_directory_uri() . '/css/genericons.css',
+		array(),
+		WIC2015_VERSION
+	);
+
+	wp_enqueue_style(
+		'wic2015-style',
 		get_stylesheet_directory_uri() . '/style.css',
 		array( 'twentythirteen-style', 'bootstrap-style' ),
-		'1.0.0'
+		WIC2015_VERSION
 	);
 
-	wp_enqueue_script( 'wic2015-script',
+	wp_enqueue_script(
+		'wic2015-script',
 		get_stylesheet_directory_uri() . '/js/wic2015.js',
 		array( 'jquery' ),
-		'1.0.0',
+		WIC2015_VERSION,
 		true
 	);
 }
