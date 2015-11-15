@@ -93,6 +93,20 @@ body.custom-background
 	max-width: 100%;
 }
 
+.site-content
+{
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.entry-content h2
+{
+	border-bottom: 3px solid #16a085;
+	padding-bottom: 5px;
+	margin: 1.5em 0 1em 0;
+}
+
 #secondary
 {
 	background: none;
@@ -147,13 +161,6 @@ body.custom-background
 {
 	background-color: #333333;
 	max-width: 100%;
-}
-
-.entry-content h2
-{
-	border-bottom: 3px solid #16a085;
-	padding-bottom: 5px;
-	margin: 1.5em 0 1em 0;
 }
 
 @media screen and ( max-width: 750px ) {
