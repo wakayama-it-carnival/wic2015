@@ -19,7 +19,6 @@ add_action( "wp_enqueue_scripts", function(){
 add_action( 'after_setup_theme', 'three_theme_after_setup_theme_02', 11 );
 
 function three_theme_after_setup_theme_02() {
-	remove_action( 'after_setup_theme', 'twentythirteen_custom_header_setup', 11 );
 	set_post_thumbnail_size( 750, 270, true );
 }
 
