@@ -5,6 +5,7 @@ if ( ! isset( $content_width ) )
 
 define( 'WIC2015_VERSION', '1.0.0' );
 
+
 add_action( 'after_setup_theme', 'wic2015_a_after_setup_theme_01' );
 
 function wic2015_a_after_setup_theme_01() {
@@ -13,17 +14,20 @@ function wic2015_a_after_setup_theme_01() {
 	remove_action( 'after_setup_theme', 'twentythirteen_custom_header_setup', 11 );
 }
 
+
 add_action( 'after_setup_theme', 'wic2015_after_setup_theme_02', 11 );
 
 function wic2015_after_setup_theme_02() {
 	set_post_thumbnail_size( 750, 270, true );
 }
 
+
 add_action( "wp_enqueue_scripts", 'wic2015_wp_enqueue_scripts_01', 11 );
 
 function wic2015_wp_enqueue_scripts_01() {
 	wp_dequeue_script( 'jquery-masonry' );
 }
+
 
 add_action( 'wp_enqueue_scripts', 'wic2015_wp_enqueue_scripts_02' );
 
@@ -72,6 +76,9 @@ function wic2015_wp_enqueue_scripts_02() {
 	);
 }
 
+
+add_action( 'widgets_init', 'wic2015_widgets_init', 11 );
+
 function wic2015_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Main Widget Area', 'twentythirteen' ),
@@ -94,7 +101,8 @@ function wic2015_widgets_init() {
 	) );
 }
 
-add_action( 'widgets_init', 'wic2015_widgets_init', 11 );
+
+add_action( 'after_setup_theme', 'wic2015_custom_header_setup', 11 );
 
 function wic2015_custom_header_setup() {
 	$args = array(
@@ -121,12 +129,11 @@ function wic2015_custom_header_setup() {
 	) );
 }
 
-add_action( 'after_setup_theme', 'wic2015_custom_header_setup', 11 );
+
+add_action( "wp_head", "wic2015_wp_head" );
 
 function wic2015_wp_head() {
 ?>
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <?php
 }
-
-add_action( "wp_head", "wic2015_wp_head" );
