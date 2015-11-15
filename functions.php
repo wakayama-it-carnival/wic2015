@@ -5,26 +5,29 @@ if ( ! isset( $content_width ) )
 
 define( 'WIC2015_VERSION', '1.0.0' );
 
-add_action( 'after_setup_theme', 'three_theme_after_setup_theme_01' );
-function three_theme_after_setup_theme_01() {
+add_action( 'after_setup_theme', 'wic2015_a_after_setup_theme_01' );
+
+function wic2015_a_after_setup_theme_01() {
 	add_theme_support( 'custom-background' );
-	// disable custom header
+	// Disable custom header of the Twenty Thirteen
 	remove_action( 'after_setup_theme', 'twentythirteen_custom_header_setup', 11 );
 }
 
-add_action( "wp_enqueue_scripts", function(){
-	wp_dequeue_script( 'jquery-masonry' );
-}, 11 );
+add_action( 'after_setup_theme', 'wic2015_after_setup_theme_02', 11 );
 
-add_action( 'after_setup_theme', 'three_theme_after_setup_theme_02', 11 );
-
-function three_theme_after_setup_theme_02() {
+function wic2015_after_setup_theme_02() {
 	set_post_thumbnail_size( 750, 270, true );
 }
 
-add_action( 'wp_enqueue_scripts', 'twentythirteen_parent_theme_enqueue_styles' );
+add_action( "wp_enqueue_scripts", 'wic2015_wp_enqueue_scripts_01', 11 );
 
-function twentythirteen_parent_theme_enqueue_styles() {
+function wic2015_wp_enqueue_scripts_01() {
+	wp_dequeue_script( 'jquery-masonry' );
+}
+
+add_action( 'wp_enqueue_scripts', 'wic2015_wp_enqueue_scripts_02' );
+
+function wic2015_wp_enqueue_scripts_02() {
 	wp_enqueue_style(
 		'twentythirteen-style',
 		get_stylesheet_directory_uri() . '/css/twentythirteen.min.css',
