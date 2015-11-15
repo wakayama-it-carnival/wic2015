@@ -63,7 +63,7 @@ function wic2015_wp_enqueue_scripts_02() {
 	wp_enqueue_style(
 		'wic2015-style',
 		get_stylesheet_directory_uri() . '/style.css',
-		array( 'twentythirteen-style', 'bootstrap-style' ),
+		array( 'twentythirteen-style', 'bootstrap-style', 'genericons' ),
 		WIC2015_VERSION
 	);
 
