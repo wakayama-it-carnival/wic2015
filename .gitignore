@@ -1,5 +1,6 @@
 .grunt
 composer.phar
+css
 js
 node_modules
 npm-debug.log
