@@ -3,7 +3,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 750;
 
-define( 'WIC2015_VERSION', '1.0.0' );
+define( 'WIC2015_VERSION', 'v0.1.0a' );
 
 
 add_action( 'after_setup_theme', 'wic2015_a_after_setup_theme_01' );

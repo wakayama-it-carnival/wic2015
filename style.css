@@ -89,6 +89,7 @@ body.custom-background
 	top: 0px;
 	margin: 0;
 	z-index: 9999;
+	background-color: rgba(250, 250, 250, 0.8);
 	border-bottom: 1px solid #dedede;
 	max-width: 100%;
 }
