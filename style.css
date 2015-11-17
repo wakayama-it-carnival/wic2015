@@ -6,6 +6,8 @@ Author:         Takayuki Miyauchi
 Author URI:     https://firegoby.jp/
 Template:       twentythirteen
 Version:        1.0.0
+Tags: black, blue, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready
+Text Domain:    wic2015
 */
 
 a:active
@@ -96,6 +98,11 @@ body.custom-background
 
 .site-content
 {
+}
+
+.site-content .archive-title,
+.site-content article
+{
 	max-width: 90%;
 	margin-left: auto;
 	margin-right: auto;
@@ -167,5 +174,10 @@ body.custom-background
 @media screen and ( max-width: 750px ) {
 	.custom-background-container {
 		background-attachment: scroll !important;
+	}
+
+	.site-description
+	{
+		font-size: 18px;
 	}
 }

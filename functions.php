@@ -1,5 +1,7 @@
 <?php
 
+require_once dirname( __FILE__ ) .'/lib/logo-customizer.php';
+
 if ( ! isset( $content_width ) )
 	$content_width = 750;
 
