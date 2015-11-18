@@ -125,6 +125,16 @@ body.custom-background
 	margin-top: 0;
 }
 
+.page-wrapper
+{
+	background-color: #ffffff;
+}
+
+.page-content
+{
+	max-width: 750px;
+}
+
 .entry-content h2
 {
 	border-bottom: 3px solid #16a085;

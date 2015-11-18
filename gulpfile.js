@@ -22,6 +22,7 @@ gulp.task( 'twentythirteen_style', function () {
 		.pipe( replace( 'images/search-icon.png', '../../twentythirteen/images/search-icon.png' ) )
 		.pipe( replace( 'images/search-icon-2x.png', '../../twentythirteen/images/search-icon-2x.png' ) )
 		.pipe( replace( 'input', '__' ) )
+		.pipe( replace( '.error404', '__' ) )
 		.pipe( rename( {
 			basename: 'twentythirteen',
 			extname: '.css'
