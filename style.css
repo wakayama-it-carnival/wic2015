@@ -198,6 +198,17 @@ body.custom-background
 	max-width: 100%;
 }
 
+.entry-content
+{
+	font-size: 18px;
+	line-height: 1.8em;
+}
+
+.entry-content p
+{
+	margin-bottom: 1.5em;
+}
+
 @media screen and ( max-width: 750px ) {
 	.custom-background-container {
 		background-attachment: scroll !important;

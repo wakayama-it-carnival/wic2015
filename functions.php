@@ -5,7 +5,7 @@ require_once dirname( __FILE__ ) .'/lib/logo-customizer.php';
 if ( ! isset( $content_width ) )
 	$content_width = 750;
 
-define( 'WIC2015_VERSION', 'v0.1.0b' );
+define( 'WIC2015_VERSION', 'v0.1.1' );
 
 
 add_action( 'after_setup_theme', 'wic2015_a_after_setup_theme_01' );
