@@ -10,6 +10,8 @@ This is a child theme of [Twenty Thirteen](https://wordpress.org/themes/twentyth
 
 WIC2015 is a simple one column theme.
 
+![](https://raw.githubusercontent.com/wakayama-it-carnival/wic2015/master/screenshot.png)
+
 * Fixed and covered custom background.
 * Logo uploader.
 * Custom header.
