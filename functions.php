@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname( __FILE__ ) .'/lib/logo-customizer.php';
+require_once dirname( __FILE__ ) .'/lib/theme-customizer.php';
 
 if ( ! isset( $content_width ) )
 	$content_width = 750;
@@ -11,8 +11,6 @@ define( 'WIC2015_SCRIPTS_VERSION', 'v0.1.2' );
 add_action( 'after_setup_theme', 'wic2015_a_after_setup_theme_01', 10 );
 
 function wic2015_a_after_setup_theme_01() {
-	add_theme_support( 'custom-background', array( 'wp-head-callback' => 'wic2015_custom_background_cb' ) );
-
 	// Disable custom header of the Twenty Thirteen
 	remove_action( 'after_setup_theme', 'twentythirteen_custom_header_setup', 11 );
 }
@@ -38,7 +36,13 @@ function wic2015_after_setup_theme_02() {
 
 	add_theme_support( 'custom-header', $args );
 
-	register_default_headers( array() );
+	register_default_headers( array(
+		'alpha' => array(
+			'url'           => get_stylesheet_directory_uri() . '/img/default-header.png',
+			'thumbnail_url' => get_stylesheet_directory_uri() . '/img/default-header.png',
+			'description'   => __( 'Wheel', 'twentyeleven' )
+		),
+	) );
 }
 
 
@@ -120,58 +124,15 @@ function wic2015_wp_head() {
 ?>
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <?php
+
+$background = get_theme_mod( 'wic2015_background' );
+
+if ( $background ) {
+	$style = " background-image: url('$background');";
+} else {
+	$style = "";
 }
 
-
-add_action( 'customize_register', 'wic2015_customize_unregister', 11 );
-
-function wic2015_customize_unregister( $wp_customize ) {
-	$wp_customize->remove_control( "background_repeat" );
-	$wp_customize->remove_setting( "background_repeat" );
-	$wp_customize->remove_control( "background_position_x" );
-	$wp_customize->remove_setting( "background_position_x" );
-	$wp_customize->remove_control( "background_attachment" );
-	$wp_customize->remove_setting( "background_attachment" );
-}
-
-
-function wic2015_custom_background_cb() {
-	// $background is the saved custom image, or the default image.
-	$background = set_url_scheme( get_background_image() );
-
-	// $color is the saved custom color.
-	// A default has to be specified in style.css. It will not be printed here.
-	$color = get_background_color();
-
-	if ( $color === get_theme_support( 'custom-background', 'default-color' ) ) {
-	$color = false;
-	}
-
-	if ( ! $background && ! $color )
-		return;
-
-		$style = $color ? "background-color: #$color;" : '';
-
-	if ( $background ) {
-		$image = " background-image: url('$background');";
-
-		$repeat = get_theme_mod( 'background_repeat', get_theme_support( 'custom-background', 'default-repeat' ) );
-		if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
-			$repeat = 'repeat';
-			$repeat = " background-repeat: $repeat;";
-
-		$position = get_theme_mod( 'background_position_x', get_theme_support( 'custom-background', 'default-position-x' ) );
-		if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
-			$position = 'left';
-			$position = " background-position: top $position;";
-
-		$attachment = get_theme_mod( 'background_attachment', get_theme_support( 'custom-background', 'default-attachment' ) );
-		if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
-			$attachment = 'scroll';
-			$attachment = " background-attachment: $attachment;";
-
-		$style .= $image . $repeat . $position . $attachment;
-	}
 ?>
 <style type="text/css" id="custom-background-css">
 div.custom-background-container { <?php echo trim( $style ); ?> }
