@@ -20,7 +20,7 @@ class Logo_Customizer {
 	{
 
 		$wp_customize->add_section( 'wic2015', array(
-			'title'    => __( 'Logo Image', 'wic2015' ),
+			'title'    => __( 'Logo', 'wic2015' ),
 			'priority' => 15,
 		) );
 
