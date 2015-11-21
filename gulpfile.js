@@ -19,7 +19,7 @@ gulp.task( 'download_twentythirteen', function () {
 
 gulp.task( 'twentythirteen_style', [ 'download_twentythirteen' ], function () {
 	return gulp.src( [
-			'tmp/src/twentythirteen/style.css'
+			'tmp/twentythirteen/style.css'
 		] )
 		.pipe( decompress() )
 		.pipe( replace( '#f7f5e7', '#fafafa' ) )
