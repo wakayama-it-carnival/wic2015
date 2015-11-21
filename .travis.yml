@@ -1,0 +1,17 @@
+language: node_js
+
+branches:
+  only:
+    - master
+
+before_script: bash ./bin/build.sh
+
+script:
+    - ls -alF js/
+
+after_success: bash ./bin/deploy.sh
+
+env:
+  global:
+  - GH_REF: github.com/wakayama-it-carnival/wic2015.git
+  - secure: "N5hxpV04RMnKpPY0y+vzRW84QDc0BtWKY7gu3urcVeCC6lYN9fYyUZO1XiejOUxuhDZGs/8vTePB49lI9pDdDYCXZY7/Qs+SIFXekqW9XejESsFwvlNbW5rmnMGj4G/EWirVE7pFc9NaW++qMPeTeZ5AgOwSIDtFAu9WF+MbLsAtedQ4DjpjsWTq/kCz9ox/jjZxb7SlKb2EApmVozNdVkvc+3AKOMglgNPD+vtpY6FsihKYtuvtP0KGBRjX+oPvmbKlEwID+1ErkOMKTbC8PmGEP6BGu/epd6U4Wtv8+xzTKcAfyrl+IkPJK9zJGh3Z5T9wG8DP8CXe7O3b3LK1GdxMa+zTlEW6PEpYmM7uzR+s2m3Dghw5avQQkb8aufKyVrwvh3ue2kD7hLaBZV0Oa3J82hMSLTPMZ7stoG7lnHQm9gveJnyYIeuEyVOK5qftM7rZyc5PwuwA3l/3J2hT/4lWCb40XxhowTA0Rr4C5CYVWRkIcvfMvH63gvRO53neID7HnRzLsymQZRVVQ0kwNz2/gkmG1MIN5GrW5pNCBcdTWjbcP6jpn3F830y+KsXwGLO/QOCy4vVO7QmeqZaULLhF74Cs365vGvgzExsYLhXFDbQ8vQkwmordD2jLExakbxo/P2IqD5XyBLrH3cWayGhlOkBHbw31MkhKan8vVEk="
