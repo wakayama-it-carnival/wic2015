@@ -6,6 +6,14 @@ A WordPress theme for "[Wakayama IT Carnival](https://wakayama-it-carnival.org/)
 
 This is a child theme of [Twenty Thirteen](https://wordpress.org/themes/twentythirteen/).
 
+## Features
+
+WIC2015 is a simple one column theme.
+
+* Fixed and covered custom background.
+* Logo uploader.
+* Custom header.
+
 ## How to build
 
 Clone this repository.

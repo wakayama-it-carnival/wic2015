@@ -18,13 +18,14 @@ rm -r .gitignore
 echo ".bowerrc
 .editorconfig
 .travis.yml
+README.md
 bin
 bower.json
 gulpfile.js
 node_modules
 package.json
-README.md
-tests" > .gitignore
+tests
+tmp" > .gitignore
 
 git init
 git config user.name "Travis CI"
