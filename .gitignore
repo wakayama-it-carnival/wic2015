@@ -6,5 +6,6 @@ node_modules
 npm-debug.log
 release
 src
+tmp
 vendor
 !js/wic2015.js

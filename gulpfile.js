@@ -1,16 +1,27 @@
 'use strict';
 
 var gulp = require( 'gulp' );
-var replace = require('gulp-replace');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var minifyCss = require('gulp-minify-css');
+var replace = require( 'gulp-replace' );
+var concat = require( 'gulp-concat' );
+var uglify = require( 'gulp-uglify' );
+var rename = require( 'gulp-rename' );
+var minifyCss = require( 'gulp-minify-css' );
+var download = require( 'gulp-download' );
+var decompress = require( 'gulp-decompress' );
 
-gulp.task( 'twentythirteen_style', function () {
-	return gulp.src( [
-			'../twentythirteen/style.css'
+gulp.task( 'download_twentythirteen', function () {
+	return download( [
+				'https://downloads.wordpress.org/theme/twentythirteen.1.6.zip',
 		] )
+		.pipe( decompress() )
+		.pipe( gulp.dest( 'tmp' ) );
+} );
+
+gulp.task( 'twentythirteen_style', [ 'download_twentythirteen' ], function () {
+	return gulp.src( [
+			'tmp/src/twentythirteen/style.css'
+		] )
+		.pipe( decompress() )
 		.pipe( replace( '#f7f5e7', '#fafafa' ) )
 		.pipe( replace( '#e8e5ce', '#333' ) )
 		.pipe( replace( '#bc360a', '#337ab7' ) )
