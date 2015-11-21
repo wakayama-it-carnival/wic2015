@@ -1,7 +1,5 @@
 <?php
 
-require_once dirname( __FILE__ ) .'/lib/theme-customizer.php';
-
 if ( ! isset( $content_width ) )
 	$content_width = 750;
 
@@ -23,6 +21,7 @@ function wic2015_after_setup_theme_02() {
 
 	$args = array(
 		'default-text-color'     => '#ffffff',
+		'default-image'          => get_stylesheet_directory_uri() . '/img/default-header.png',
 
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 460,
@@ -125,7 +124,7 @@ function wic2015_wp_head() {
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <?php
 
-$background = get_theme_mod( 'wic2015_background' );
+$background = get_theme_mod( 'wic2015_background', wic2015_get_default_background() );
 
 if ( $background ) {
 	$style = " background-image: url('$background');";
@@ -138,4 +137,65 @@ if ( $background ) {
 div.custom-background-container { <?php echo trim( $style ); ?> }
 </style>
 <?php
+}
+
+
+add_action( 'customize_register', 'wic2015_customize_register' );
+
+function wic2015_customize_register( $wp_customize )
+{
+	/*
+	 * Theme customizer for logo
+	 */
+	$wp_customize->add_section( 'wic2015_logo', array(
+		'title'    => __( 'Logo', 'wic2015' ),
+		'priority' => 41,
+	) );
+
+	$wp_customize->add_setting( 'wic2015_logo', array(
+		'default'    => apply_filters( 'wic2015_default_logo', '' ),
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control(
+		$wp_customize,
+		'wic2015_logo',
+		array(
+			'label'	   => __( 'Logo', 'wic2015' ),
+			'section'  => 'wic2015_logo',
+			'settings' => 'wic2015_logo',
+		)
+	) );
+
+	/*
+	 * Theme customizer for background
+	 */
+	$wp_customize->add_section( 'wic2015_background', array(
+		'title'    => __( 'Background Image', 'wic2015' ),
+		'priority' => 42,
+	) );
+
+	$wp_customize->add_setting( 'wic2015_background', array(
+		'default'    => wic2015_get_default_background(),
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control(
+		$wp_customize,
+		'wic2015_background',
+		array(
+			'label'	   => __( 'Background Image', 'wic2015' ),
+			'section'  => 'wic2015_background',
+			'settings' => 'wic2015_background',
+		)
+	) );
+}
+
+function wic2015_get_default_background() {
+	return apply_filters(
+		'wic2015_default_background',
+		get_stylesheet_directory_uri() . "/img/default-background.jpg"
+	);
 }

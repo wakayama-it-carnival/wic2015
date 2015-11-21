@@ -35,7 +35,20 @@
 	<div id="page" class="hfeed site">
 		<header id="masthead" class="site-header" role="banner">
 			<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<h1 class="site-title"><?php the_logo(); ?></h1>
+				<h1 class="site-title"><?php
+					$logo = get_theme_mod( 'wic2015_logo' );
+
+					if ( $logo ) {
+						$image = '<img id="site-logo" src="%s" alt="%s" style="max-width:100%%; height:auto;">';
+						printf(
+							$image,
+							esc_url( $logo ),
+							esc_attr( get_bloginfo( 'name' ) )
+						);
+					} else {
+						bloginfo( 'name' );
+					}
+				?></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</a>
 
