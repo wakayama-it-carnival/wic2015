@@ -96,6 +96,14 @@ body.custom-background
 	max-width: 100%;
 }
 
+.nav-menu .sub-menu,
+.nav-menu .children
+{
+	border: none;
+	left: 0;
+	box-shadow: 1px 1px 1px 1px rgba( 255, 255, 255, 0.1 );
+}
+
 .site-content
 {
 }
@@ -198,7 +206,7 @@ body.custom-background
 	max-width: 100%;
 }
 
-.entry-content
+.entry-content *
 {
 	font-size: 18px;
 	line-height: 1.8em;
