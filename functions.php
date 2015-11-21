@@ -191,6 +191,26 @@ function wic2015_customize_register( $wp_customize )
 			'settings' => 'wic2015_background',
 		)
 	) );
+
+	/*
+	 * Theme customizer for background
+	 */
+	$wp_customize->add_section( 'wic2015_footer', array(
+		'title'    => __( 'Footer', 'wic2015' ),
+		'priority' => 200,
+	) );
+
+	$wp_customize->add_setting( 'wic2015_footer', array(
+		'default' => '<a href="https://firegoby.jp/">WIC2015</a> powered by <a href="https://wordpress.org/">WordPress</a>',
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( 'wic2015_footer', array(
+		'label'   => 'Footer',
+		'section' => 'wic2015_footer',
+		'type'    => 'textarea',
+	) );
 }
 
 function wic2015_get_default_background() {
