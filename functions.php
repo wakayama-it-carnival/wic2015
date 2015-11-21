@@ -5,6 +5,8 @@ if ( ! isset( $content_width ) )
 
 define( 'WIC2015_SCRIPTS_VERSION', 'v0.1.2' );
 
+load_theme_textdomain( 'wic2015', get_stylesheet_directory() . '/languages' );
+
 
 add_action( 'after_setup_theme', 'wic2015_a_after_setup_theme_01', 10 );
 
@@ -39,7 +41,7 @@ function wic2015_after_setup_theme_02() {
 		'alpha' => array(
 			'url'           => get_stylesheet_directory_uri() . '/img/default-header.png',
 			'thumbnail_url' => get_stylesheet_directory_uri() . '/img/default-header.png',
-			'description'   => __( 'Wheel', 'twentyeleven' )
+			'description'   => __( 'Alpha Channel', 'wic2015' )
 		),
 	) );
 }
@@ -69,12 +71,7 @@ function wic2015_wp_enqueue_scripts_02() {
 		WIC2015_SCRIPTS_VERSION
 	);
 
-	wp_enqueue_style(
-		'bootstrap-style',
-		get_stylesheet_directory_uri() . '/css/bootstrap.min.css',
-		array(),
-		WIC2015_SCRIPTS_VERSION
-	);
+	wp_enqueue_style( 'dashicons' );
 
 	wp_enqueue_style(
 		'genericons',
@@ -104,9 +101,9 @@ add_action( 'widgets_init', 'wic2015_widgets_init', 11 );
 
 function wic2015_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Main Widget Area', 'twentythirteen' ),
+		'name'          => __( 'Main Widget Area', 'wic2015' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Appears in the footer section of the site.', 'twentythirteen' ),
+		'description'   => __( 'Appears in the footer section of the site.', 'wic2015' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="widget-container">',
 		'after_widget'  => '</div></aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -207,7 +204,7 @@ function wic2015_customize_register( $wp_customize )
 	) );
 
 	$wp_customize->add_control( 'wic2015_footer', array(
-		'label'   => 'Footer',
+		'label'   => __( 'Footer', 'wic2015' ),
 		'section' => 'wic2015_footer',
 		'type'    => 'textarea',
 	) );
