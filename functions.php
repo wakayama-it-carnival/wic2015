@@ -35,7 +35,8 @@ function wic2015_after_setup_theme_02() {
 		'admin-preview-callback' => 'twentythirteen_admin_header_image',
 	);
 
-	add_theme_support( 'custom-header', $args );
+	add_theme_support( "custom-header", $args );
+	add_theme_support( "title-tag" );
 
 	register_default_headers( array(
 		'alpha' => array(
@@ -150,9 +151,10 @@ function wic2015_customize_register( $wp_customize )
 	) );
 
 	$wp_customize->add_setting( 'wic2015_logo', array(
-		'default'    => apply_filters( 'wic2015_default_logo', '' ),
-		'type'       => 'theme_mod',
-		'capability' => 'edit_theme_options',
+		'default'           => apply_filters( 'wic2015_default_logo', '' ),
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control(
@@ -174,9 +176,10 @@ function wic2015_customize_register( $wp_customize )
 	) );
 
 	$wp_customize->add_setting( 'wic2015_background', array(
-		'default'    => wic2015_get_default_background(),
-		'type'       => 'theme_mod',
-		'capability' => 'edit_theme_options',
+		'default'           => wic2015_get_default_background(),
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control(
@@ -190,13 +193,14 @@ function wic2015_customize_register( $wp_customize )
 	) );
 
 	/*
-	 * Theme customizer for background
+	 * Theme customizer for footer
 	 */
 	$wp_customize->add_section( 'wic2015_footer', array(
 		'title'    => __( 'Footer', 'wic2015' ),
 		'priority' => 200,
 	) );
 
+	// it allows html
 	$wp_customize->add_setting( 'wic2015_footer', array(
 		'default' => '<a href="https://firegoby.jp/">WIC2015</a> powered by <a href="https://wordpress.org/">WordPress</a>',
 		'type'       => 'theme_mod',
