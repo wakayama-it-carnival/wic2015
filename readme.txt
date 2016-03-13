@@ -2,7 +2,7 @@
 Contributors: miyauchi
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.4
-Version: 1.1.0
+Version: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, white, one-column, fluid-layout, responsive-layout, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready
@@ -37,3 +37,7 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+three.js
+License: MIT
+Source : http://getbootstrap.com/
