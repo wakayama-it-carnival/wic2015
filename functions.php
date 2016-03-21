@@ -205,6 +205,7 @@ function wic2015_customize_register( $wp_customize )
 		'default' => '<a href="https://firegoby.jp/">WIC2015</a> powered by <a href="https://wordpress.org/">WordPress</a>',
 		'type'       => 'theme_mod',
 		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'wic2015_sanitize_footer_callback'
 	) );
 
 	$wp_customize->add_control( 'wic2015_footer', array(
@@ -219,4 +220,8 @@ function wic2015_get_default_background() {
 		'wic2015_default_background',
 		get_stylesheet_directory_uri() . "/img/default-background.jpg"
 	);
+}
+
+function wic2015_sanitize_footer_callback( $input ) {
+	return wp_kses_post( force_balance_tags( $input ) );
 }
