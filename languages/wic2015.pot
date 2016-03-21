@@ -1,0 +1,67 @@
+# Copyright (C) 2015 Takayuki Miyauchi
+# This file is distributed under the same license as the WIC2015 package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WIC2015 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/wic2015\n"
+"POT-Creation-Date: 2015-11-21 19:51:22+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: functions.php:44
+msgid "Alpha Channel"
+msgstr ""
+
+#: functions.php:104
+msgid "Main Widget Area"
+msgstr ""
+
+#: functions.php:106
+msgid "Appears in the footer section of the site."
+msgstr ""
+
+#: functions.php:148 functions.php:162
+msgid "Logo"
+msgstr ""
+
+#: functions.php:172 functions.php:186
+msgid "Background Image"
+msgstr ""
+
+#: functions.php:196
+msgid "Footer"
+msgstr ""
+
+#: header.php:57
+msgid "Menu"
+msgstr ""
+
+#: header.php:58
+msgid "Skip to content"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "WIC2015"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/wakayama-it-carnival/wic2015"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"WIC2015 is a flexsible one-column theme, so it allows you to customize fixed "
+"background, logo and footer text."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Takayuki Miyauchi"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://firegoby.jp/"
+msgstr ""

@@ -1,0 +1,11 @@
+.bowerrc
+.editorconfig
+.travis.yml
+README.md
+bin
+bower.json
+gulpfile.js
+node_modules
+package.json
+tests
+tmp

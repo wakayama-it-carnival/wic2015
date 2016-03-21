@@ -1,0 +1,232 @@
+/*
+Theme Name:     WIC2015
+Theme URI:      https://github.com/wakayama-it-carnival/wic2015
+Description:    WIC2015 is a flexsible one-column theme, so it allows you to customize fixed background, logo and footer text.
+Author:         Takayuki Miyauchi
+Author URI:     https://firegoby.jp/
+Template:       twentythirteen
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version:        1.1.2
+Tags: black, blue, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready
+Text Domain:    wic2015
+*/
+
+a:active
+{
+	text-decoration: underline !important;
+}
+
+body
+{
+	height: 100%;
+}
+
+.custom-background-container
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: top center;
+	z-index: -1;
+}
+
+.site
+{
+	background-color: transparent;
+	max-width: 100%;
+}
+
+.btn
+{
+	color: #ffffff !important;
+}
+
+#main
+{
+	background-color: #ffffff;
+}
+
+#masthead
+{
+	background-size: cover;
+	background-position: bottom center;
+	height: 460px;
+	position: relative;
+}
+
+#masthead .home-link
+{
+	color: #ffffff;
+	display: block;
+	text-shadow: 1px 1px 2px #555555;
+	position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    margin: auto;
+    width: 100%;
+	height: auto;
+	min-height: auto;
+	overflow: hidden;
+}
+
+#masthead .home-link h1,
+#masthead .home-link h2
+{
+	text-align: center;
+}
+
+#navbar
+{
+	position: fixed;
+	top: 0px;
+	margin: 0;
+	z-index: 9999;
+	background-color: rgba(250, 250, 250, 0.8);
+	border-bottom: 1px solid #dedede;
+	max-width: 100%;
+}
+
+.nav-menu .sub-menu,
+.nav-menu .children
+{
+	border: none;
+	left: 0;
+	box-shadow: 1px 1px 1px 1px rgba( 255, 255, 255, 0.1 );
+}
+
+.site-content
+{
+}
+
+.archive-title,
+.page-title
+{
+	width: 750px;
+	max-width: 90%;
+	color: #ffffff;
+	font-size: 16px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.site-content .archive-title,
+.site-content .page-title,
+.site-content article
+{
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-header
+{
+	margin-top: 0;
+}
+
+.page-wrapper
+{
+	background-color: #ffffff;
+}
+
+.page-content
+{
+	max-width: 750px;
+}
+
+.entry-content h2
+{
+	border-bottom: 3px solid #16a085;
+	padding-bottom: 5px;
+	margin: 1.5em 0 1em 0;
+}
+
+#secondary
+{
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+#colophon
+{
+	background-color: transparent;
+}
+
+#colophon .widget-area
+{
+    width: 100% !important;
+    max-width: 100% !important;
+	box-sizing: border-box;
+	padding: 0;
+}
+
+#colophon .widget
+{
+	padding: 0;
+	width: 100%;
+	position: static !important;
+	margin: 0;
+	float: none;
+	overflow: auto;
+	background-color: #2e3037;
+}
+
+#colophon .widget:nth-child(even)
+{
+	background-color: rgba( 0, 51, 102, 0.8);
+}
+
+#colophon .widget-container
+{
+	width: 750px;
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 2em 0;
+}
+
+#colophon .widget_sp_image
+{
+    text-align: center;
+}
+
+.site-info
+{
+	background-color: #333333;
+	max-width: 100%;
+}
+
+.entry-content *
+{
+	font-size: 18px;
+	line-height: 1.8em;
+}
+
+.entry-content p
+{
+	margin-bottom: 1.5em;
+}
+
+@media screen and ( max-width: 750px ) {
+	.custom-background-container {
+		background-attachment: scroll !important;
+	}
+
+	.site-description
+	{
+		font-size: 18px;
+	}
+
+	.archive-title,
+	.page-title
+	{
+		font-size: 12px;
+	}
+}
