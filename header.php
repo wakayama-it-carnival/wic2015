@@ -26,7 +26,7 @@
 					$logo = get_theme_mod( 'wic2015_logo' );
 
 					if ( $logo ) {
-						$image = '<img id="site-logo" src="%s" alt="%s" style="max-width:100%%; height:auto;">';
+						$image = '<img id="site-logo" src="%s" alt="%s">';
 						printf(
 							$image,
 							esc_url( $logo ),

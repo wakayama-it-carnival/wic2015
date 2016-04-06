@@ -3,7 +3,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 750;
 
-define( 'WIC2015_SCRIPTS_VERSION', 'v1.1.3' );
+define( 'WIC2015_SCRIPTS_VERSION', 'v1.1.4' );
 
 load_theme_textdomain( 'wic2015', get_stylesheet_directory() . '/languages' );
 
